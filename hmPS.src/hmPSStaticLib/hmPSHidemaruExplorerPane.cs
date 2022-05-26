@@ -1,6 +1,7 @@
 ﻿// ★秀丸クラス
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 public sealed partial class hmPSDynamicLib
 {
@@ -87,27 +88,17 @@ public sealed partial class hmPSDynamicLib
             {
                 try
                 {
-                    if (TMacro.IsExecuting)
+                    IntPtr startpointer = pExplorerPane_GetProject(Hidemaru.WindowHandle);
+                    List<byte> blist = GetPointerToByteArray(startpointer);
+
+                    string project_name = Hidemaru.HmOriginalDecodeFunc.DecodeOriginalEncodeVector(blist);
+
+                    if (String.IsNullOrEmpty(project_name))
                     {
-                        string cmd = @"dllfuncstr(loaddll(""HmExplorerPane""), ""GetProject"", hidemaruhandle(0))";
-                        string project_name = (string)TMacro.Var[cmd];
-                        if (String.IsNullOrEmpty(project_name))
-                        {
-                            return null;
-                        }
-                        return project_name;
+                        return null;
                     }
-                    else
-                    {
-                        string cmd = @"endmacro dllfuncstr(loaddll(""HmExplorerPane""), ""GetProject"", hidemaruhandle(0))";
-                        var result = TMacro.ExecEval(cmd);
-                        string project_name = result.Message;
-                        if (String.IsNullOrEmpty(project_name))
-                        {
-                            return null;
-                        }
-                        return result.Message;
-                    }
+                    return project_name;
+
                 }
                 catch (Exception e)
                 {
@@ -115,6 +106,29 @@ public sealed partial class hmPSDynamicLib
                 }
 
                 return null;
+            }
+
+            private static List<byte> GetPointerToByteArray(IntPtr startpointer)
+            {
+                List<byte> blist = new List<byte>();
+
+                int index = 0;
+                while (true)
+                {
+                    var b = Marshal.ReadByte(startpointer, index);
+
+                    blist.Add(b);
+
+                    // 文字列の終端はやはり0
+                    if (b == 0)
+                    {
+                        break;
+                    }
+
+                    index++;
+                }
+
+                return blist;
             }
 
             // GetCurrentDirする
@@ -127,30 +141,16 @@ public sealed partial class hmPSDynamicLib
                 }
                 try
                 {
-                    if (hmPSDynamicLib.Hidemaru.pExplorerPane_GetCurrentDir != null)
+                    IntPtr startpointer = pExplorerPane_GetCurrentDir(Hidemaru.WindowHandle);
+                    List<byte> blist = GetPointerToByteArray(startpointer);
+
+                    string currentdir_name = Hidemaru.HmOriginalDecodeFunc.DecodeOriginalEncodeVector(blist);
+
+                    if (String.IsNullOrEmpty(currentdir_name))
                     {
-                        if (TMacro.IsExecuting)
-                        {
-                            string cmd = @"dllfuncstr(loaddll(""HmExplorerPane""), ""GetCurrentDir"", hidemaruhandle(0))";
-                            string currentdir_name = (string)TMacro.Var[cmd];
-                            if (String.IsNullOrEmpty(currentdir_name))
-                            {
-                                return null;
-                            }
-                            return currentdir_name;
-                        }
-                        else
-                        {
-                            string cmd = @"endmacro dllfuncstr(loaddll(""HmExplorerPane""), ""GetCurrentDir"", hidemaruhandle(0))";
-                            var result = TMacro.ExecEval(cmd);
-                            string currentdir_name = result.Message;
-                            if (String.IsNullOrEmpty(currentdir_name))
-                            {
-                                return null;
-                            }
-                            return result.Message;
-                        }
+                        return null;
                     }
+                    return currentdir_name;
                 }
                 catch (Exception e)
                 {
