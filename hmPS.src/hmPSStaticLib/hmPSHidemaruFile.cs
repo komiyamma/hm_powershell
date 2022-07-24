@@ -377,7 +377,7 @@ public sealed partial class hmPSDynamicLib
                         String text = Hidemaru.TFile.ReadAllText(this.m_path, this.m_encoding.HmEncode);
                         return text;
                     }
-                    catch (Exception e)
+                    catch (Exception)
                     {
                         throw;
                     }
