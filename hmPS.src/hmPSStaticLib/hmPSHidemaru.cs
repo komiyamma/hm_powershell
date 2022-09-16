@@ -58,6 +58,9 @@ public sealed partial class hmPSDynamicLib
                 if (number > Int32.MaxValue)
                 {
                     number = number - 4294967296;
+                    number = number - Int32.MinValue;
+                    number = number % 4294967296;
+                    number = number + Int32.MinValue;
                 }
                 else
                 {
@@ -69,6 +72,9 @@ public sealed partial class hmPSDynamicLib
                 if (number < Int32.MinValue)
                 {
                     number = number + 4294967296;
+                    number = number + Int32.MinValue;
+                    number = number % 4294967296;
+                    number = number - Int32.MinValue;
                 }
                 else
                 {
