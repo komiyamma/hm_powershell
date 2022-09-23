@@ -1,21 +1,6 @@
 }
 
 
-# ２つの値を返す
-    function enumregvalue{
-        list($_result, $_args, $_error, $_message) = $Hm->Macro->doFunction->enumregvalue;
-        return array($_result, $_args[1]);
-   
-}
-
-# ２つの値を返す
-if (!function_exists("getlinecount")) {
-    function getlinecount{
-        list($_result, $_args, $_error, $_message) = $Hm->Macro->doFunction->getlinecount;
-        return array($_result, $_args[2]);
-   
-}
-
 
 if (!function_exists("getresultex")) {
     function getresultex{ 

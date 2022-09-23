@@ -298,33 +298,30 @@ function strreplace{ return $hm::Macro::FuncProxy("strreplace", "fs", $args[0]);
 function encodeuri{ return $hm::Macro::FuncProxy("encodeuri", "fs", $args[0]); }
 function decodeuri{ return $hm::Macro::FuncProxy("decodeuri", "fs", $args[0]); }
 
-# 分岐あり
-function toupper{
-    if ($args[0].Length -ge 1 -and (gettype($args[0][0]) -eq "string")) {
-        return $hm::Macro::FuncProxy("toupper", "fs", $args[0]);
-    } else {
-        return $hm::Macro::FuncProxy("toupper", "st", $args[0]);
-    }
+function enumregvalue($arguments){
+    $ret = $hm::Macro::Function("enumregvalue", $arguments[0], 0);
+    $rethash =  @{}
+    $rethash.add("regvalue", $ret.Result);
+    $rethash.add("regtype", $ret.Args[1]);
+    return $rethash;
+}
+
+function getlinecount($arguments) {
+    $ret = $hm::Macro::Function("getlinecount", $arguments[0], $arguments[1], 0);
+    $rethash =  @{}
+    $rethash.add("lineno", $ret.Result);
+    $rethash.add("column", $ret.Args[2]);
+    return $rethash;
 }
 
 # 分岐あり
-function tolower{
-    if ($args[0].Length -ge 1 -and (gettype($args[0][0]) -eq "string")) {
-        return $hm::Macro::FuncProxy("tolower", "fs", $args[0]);
-    } else {
-        return $hm::Macro::FuncProxy("tolower", "st", $args[0]);
-    }
-}
+function toupper{ return $hm::Macro::FuncProxy("toupper", "fsn", $args[0]); }
 
 # 分岐あり
-function filter{
-    if ($args[0].Legnth -ge 4) {
-        return $hm::Macro::FuncProxy("filter", "fs", $args[0]);
-   
-    } else {
-        return $hm::Macro::FuncProxy("filter", "st", $args[0]);
-    }
-}
+function tolower{ return $hm::Macro::FuncProxy("tolower", "fsn", $args[0]); }
+
+# 分岐あり
+function filter{ return $hm::Macro::FuncProxy("filter", "fsn", $args[0]); }
 
 function input{ return $hm::Macro::FuncProxy("input", "fs", $args[0]); }
 function getinistr{ return $hm::Macro::FuncProxy("getinistr", "fs", $args[0]); }
@@ -723,10 +720,8 @@ function replacedialog{ return $hm::Macro::FuncProxy("replacedialog", "st1s2s", 
 function replacedown{ return $hm::Macro::FuncProxy("replacedown", "st1s2s", $args[0]); }
 function replaceup{ return $hm::Macro::FuncProxy("replaceup", "st1s2s", $args[0]); }
 
-
-$a = replacedialog("あいうえお", "かきくけこ");
+$a = toupper;
 $hm::OutputPane::Output($a);
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 );

@@ -35,4 +35,3 @@ G:\repogitory\hm_powershell\hmPS.src\hmPSStaticLib\bin\Release\hmPSStaticLib.net
 G:\repogitory\hm_powershell\hmPS.src\hmPSStaticLib\bin\Release\hmPSStaticLib.netmodule
 G:\repogitory\hm_powershell\hmPS.src\hmPSStaticLib\obj\Release\hmPSStaticLib.csproj.CoreCompileInputs.cache
 G:\repogitory\hm_powershell\hmPS.src\hmPSStaticLib\obj\Release\hmPSStaticLib.netmodule
-G:\repogitory\hm_powershell\hmPS.src\hmPSStaticLib\obj\Release\hmPSStaticLib.csprojAssemblyReference.cache

@@ -1052,6 +1052,12 @@ public sealed partial class hmPSDynamicLib
 
             public static Object FuncProxy(String name, String t, Object[] args)
             {
+                System.Collections.Generic.List<Object> l = new System.Collections.Generic.List<Object>();
+                if (args == null)
+                {
+                    // ヌルは防衛。Objectの配列にしておく。
+                    args = l.ToArray();
+                }
                 if (t == "fn" || t == "fs") {
                     var count = args.Length;
                     if (count == 0)
@@ -1069,13 +1075,35 @@ public sealed partial class hmPSDynamicLib
                     var ret = Function(name);
                     return ret.Result;
                 }
-                else if (t == "fn0" || t == "fs0")
-                {
-                    var ret = Function(name);
-                    return ret.Result;
-                }
                 else if (t == "fsn")
                 {
+                    if (name == "toupper" || name == "tolower")
+                    {
+                        if (args.Length >= 1 && args[0].GetType() == "".GetType())
+                        {
+                            var ret = Function(name, args);
+                            return ret.Result;
+                        }
+                        else
+                        {
+                            var ret = Statement(name, args);
+                            return ret.Result;
+                        }
+                    }
+                    else if (name == "filter")
+                    {
+                        if (args.Length >= 4)
+                        {
+                            var ret = Function(name, args);
+                            return ret.Result;
+                        }
+                        else
+                        {
+                            var ret = Statement(name, args);
+                            return ret.Result;
+                        }
+                    }
+
                     var count = args.Length;
                     if (count == 0)
                     {
