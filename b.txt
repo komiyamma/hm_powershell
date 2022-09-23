@@ -2,25 +2,6 @@
 
 
 
-if (!function_exists("getresultex")) {
-    function getresultex{ 
-        // この時だけ文字列が返る
-        if ($args[0] == -1) {
-            return getresultex_rstr;
-       
-        else {
-            return $hm::Macro::FuncProxy("getresultex", "fsn", $args[0]);
-       
-   
-    function getresultex_rstr{ 
-        $Hm->Macro->setVar('#__getresultex_rstr_arg0__', $args[0]);
-        $eval_ret = $Hm->Macro->doEval('$__temp_getresultex_rstr__ = getresultex(#__getresultex_rstr_arg0__);');
-        $func_ret = $Hm->Macro->getVar('$__temp_getresultex_rstr__');
-        $Hm->Macro->setVar('$__temp_getresultex_rstr__', '');
-        $Hm->Macro->setVar('#__getresultex_rstr_arg0__', 0);
-        return $func_ret;
-   
-}
 
 if (!function_exists("geteventparam")) {
     function geteventparam{ 
@@ -39,32 +20,6 @@ if (!function_exists("geteventparam")) {
         $Hm->Macro->setVar('$__temp_geteventparam_rstr__', '');
         $Hm->Macro->setVar('#__geteventparam_rstr_arg0__', 0);
         return $func_ret;
-   
-}
-
-if (!function_exists("getconfig")) {
-    # 特に問題はないだろうから、文字列のみで返すようにする
-    function getconfig {
-        $Hm->Macro->setVar('$__getconfig_rstr_arg0__', $args[0]);
-        $eval_ret = $Hm->Macro->doEval('$__temp_getconfig_rstr__ = getconfig($__getconfig_rstr_arg0__);');
-        $func_ret = $Hm->Macro->getVar('$__temp_getconfig_rstr__');
-        $Hm->Macro->setVar('$__temp_getconfig_rstr__', '');
-        $Hm->Macro->setVar('#__getconfig_rstr_arg0__', 0);
-        return $func_ret;
-   
-
-    # 数値型で欲しい場合には、こちらを使えば、数値に変換可能なら数値型に変換して返す。
-    function getconfig_rnum {
-        $ret = getconfig;
-        try {
-            $num = intval($ret);
-            if ("$num" == $ret ) {
-                return $num;
-           
-        } catch(e) {
-
-       
-        return 0;
    
 }
 

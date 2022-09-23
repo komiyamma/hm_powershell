@@ -725,13 +725,30 @@ function getconfig($name) {
     $eval_ret = $hm::Macro::Eval('$__temp_getconfig_rstr__ = getconfig($__getconfig_rstr_arg0__);');
     $func_ret = $hm::Macro::Var['$__temp_getconfig_rstr__'];
     $hm::Macro::Var['$__temp_getconfig_rstr__'] = '';
-    $hm::Macro::Var['#__getconfig_rstr_arg0__'] = 0;
+    $hm::Macro::Var['$__getconfig_rstr_arg0__'] = '';
     return $func_ret;
 
 }
 
-$a = getconfig("Font");
-$hm::OutputPane::Output($a);
+function getresultex($result_id) {
+
+    if ($result_id -eq -1) {
+        $hm::Macro::Var['#__getresultex_rstr_arg0__'] = $result_id;
+        $eval_ret = $hm::Macro::Eval('$__temp_getresultex_rstr__ = getresultex(#__getresultex_rstr_arg0__);');
+        $func_ret = $hm::Macro::Var['$__temp_getresultex_rstr__'];
+        $hm::Macro::Var['$__temp_getresultex_rstr__'] = '';
+        $hm::Macro::Var['#__getresultex_rstr_arg0__'] = 0;
+        return $func_ret;
+   
+    } else {
+        $ret = $hm::Macro::Function("getresultex", $result_id);
+        $ret.Result;
+    }
+}
+
+
+$a = getresultex(0);
+$hm::OutputPane::Output($a.GetType().FullName);
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 );
