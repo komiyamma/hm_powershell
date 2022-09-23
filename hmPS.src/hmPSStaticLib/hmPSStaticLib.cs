@@ -194,6 +194,17 @@ public sealed partial class hmPSDynamicLib
                 // ダミー関数の定義
                 DoString("function DestroyScope() {}");
 
+                string ps1path = strDllFullPath;
+                ps1path = System.IO.Path.GetDirectoryName(ps1path);
+                ps1path = ps1path + "\\hmPS.ps1";
+
+                // ファイルが存在する時だけ、その定義を行う
+                if (System.IO.File.Exists(ps1path))
+                {
+                    string func_expression = System.IO.File.ReadAllText(ps1path);
+                    DoString(func_expression);
+                }
+
                 return (IntPtr)1;
             }
             catch (Exception e)
