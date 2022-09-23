@@ -720,7 +720,17 @@ function replacedialog{ return $hm::Macro::FuncProxy("replacedialog", "st1s2s", 
 function replacedown{ return $hm::Macro::FuncProxy("replacedown", "st1s2s", $args[0]); }
 function replaceup{ return $hm::Macro::FuncProxy("replaceup", "st1s2s", $args[0]); }
 
-$a = toupper;
+function getconfig($name) {
+    $hm::Macro::Var['$__getconfig_rstr_arg0__'] = $name;
+    $eval_ret = $hm::Macro::Eval('$__temp_getconfig_rstr__ = getconfig($__getconfig_rstr_arg0__);');
+    $func_ret = $hm::Macro::Var['$__temp_getconfig_rstr__'];
+    $hm::Macro::Var['$__temp_getconfig_rstr__'] = '';
+    $hm::Macro::Var['#__getconfig_rstr_arg0__'] = 0;
+    return $func_ret;
+
+}
+
+$a = getconfig("Font");
 $hm::OutputPane::Output($a);
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
