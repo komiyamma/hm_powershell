@@ -1049,6 +1049,113 @@ public sealed partial class hmPSDynamicLib
                     }
                 }
             }
+
+            public static Object FuncProxy(String name, String t, Object[] args)
+            {
+                if (t == "fn" || t == "fs") {
+                    var count = args.Length;
+                    if (count == 0)
+                    {
+                        return Var[name];
+                    }
+                    else
+                    {
+                        var ret = Function(name, args);
+                        return ret.Result;
+                    }
+                }
+                else if (t == "fn0" || t == "fs0")
+                {
+                    var ret = Function(name);
+                    return ret.Result;
+                }
+                else if (t == "fn0" || t == "fs0")
+                {
+                    var ret = Function(name);
+                    return ret.Result;
+                }
+                else if (t == "fsn")
+                {
+                    var count = args.Length;
+                    if (count == 0)
+                    {
+                        return Var[name];
+                    }
+                    else
+                    {
+                        var ret = Function(name, args);
+                        return ret.Result;
+                    }
+                }
+                else if (t == "fn1s")
+                {
+                    List<object> list_args = new List<object>(args);
+                    if (args.Length >= 1)
+                    {
+                        list_args[0] = list_args[0].ToString();
+                    }
+
+                    {
+                        var ret = Function(name, list_args.ToArray());
+                        return ret.Result;
+                    }
+                }
+                else if (t == "fn2s")
+                {
+                    List<object> list_args = new List<object>(args);
+                    if (args.Length >= 1)
+                    {
+                        list_args[0] = list_args[0].ToString();
+                    }
+                    if (args.Length >= 2)
+                    {
+                        list_args[1] = list_args[1].ToString();
+                    }
+
+                    {
+                        var ret = Function(name, list_args.ToArray());
+                        return ret.Result;
+                    }
+                }
+                else if (t == "st")
+                {
+                    var ret = Statement(name, args);
+                    return ret.Result;
+                }
+                else if (t == "fn1s")
+                {
+                    List<object> list_args = new List<object>(args);
+                    if (args.Length >= 1)
+                    {
+                        list_args[0] = list_args[0].ToString();
+                    }
+
+                    {
+                        var ret = Statement(name, list_args.ToArray());
+                        return ret.Result;
+                    }
+                }
+                else if (t == "fn2s")
+                {
+                    List<object> list_args = new List<object>(args);
+                    if (args.Length >= 1)
+                    {
+                        list_args[0] = list_args[0].ToString();
+                    }
+                    if (args.Length >= 2)
+                    {
+                        list_args[1] = list_args[1].ToString();
+                    }
+
+                    {
+                        var ret = Statement(name, list_args.ToArray());
+                        return ret.Result;
+                    }
+                }
+
+
+                return null;
+            }
         }
     }
 }
