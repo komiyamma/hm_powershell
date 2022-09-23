@@ -721,34 +721,42 @@ function replacedown{ return $hm::Macro::FuncProxy("replacedown", "st1s2s", $arg
 function replaceup{ return $hm::Macro::FuncProxy("replaceup", "st1s2s", $args[0]); }
 
 function getconfig($name) {
-    $hm::Macro::Var['$__getconfig_rstr_arg0__'] = $name;
-    $eval_ret = $hm::Macro::Eval('$__temp_getconfig_rstr__ = getconfig($__getconfig_rstr_arg0__);');
-    $func_ret = $hm::Macro::Var['$__temp_getconfig_rstr__'];
-    $hm::Macro::Var['$__temp_getconfig_rstr__'] = '';
-    $hm::Macro::Var['$__getconfig_rstr_arg0__'] = '';
-    return $func_ret;
+    $ret = $hm::Macro::FunctionStr("getconfig", $name); 
+    return $ret.Result;
+}
 
+function getconfig_rnum($name) {
+    $ret = $hm::Macro::FunctionNum("getconfig", $name); 
+    return $ret.Result;
 }
 
 function getresultex($result_id) {
 
     if ($result_id -eq -1) {
-        $hm::Macro::Var['#__getresultex_rstr_arg0__'] = $result_id;
-        $eval_ret = $hm::Macro::Eval('$__temp_getresultex_rstr__ = getresultex(#__getresultex_rstr_arg0__);');
-        $func_ret = $hm::Macro::Var['$__temp_getresultex_rstr__'];
-        $hm::Macro::Var['$__temp_getresultex_rstr__'] = '';
-        $hm::Macro::Var['#__getresultex_rstr_arg0__'] = 0;
-        return $func_ret;
+	    $ret = $hm::Macro::FunctionStr("getresultex", $result_id); 
+        return $ret.Result;
    
     } else {
-        $ret = $hm::Macro::Function("getresultex", $result_id);
-        $ret.Result;
+        $ret = $hm::Macro::FunctionNum("getresultex", $result_id);
+        return $ret.Result;
+    }
+}
+
+function geteventparam($event_info_ix) {
+
+    if (($event_info_ix -eq 0) -and (event -eq 9)) {
+        $ret = $hm::Macro::FunctionStr("geteventparam", $event_info_ix);
+        return $ret.Result;
+    }
+    else {
+        $ret = $hm::Macro::Function("geteventparam", $event_info_ix);
+        return $ret.Result;
     }
 }
 
 
-$a = getresultex(0);
-$hm::OutputPane::Output($a.GetType().FullName);
+$a = message("a","b");
+$hm::OutputPane::Output($a);
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 );

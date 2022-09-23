@@ -3,26 +3,6 @@
 
 
 
-if (!function_exists("geteventparam")) {
-    function geteventparam{ 
-        // この時だけ文字列が返る
-        if ($args[0] == 0 && event() == 9) {
-            return geteventparam_rstr;
-       
-        else {
-            return $hm::Macro::FuncProxy("geteventparam", "fsn", $args[0]);
-       
-   
-    function geteventparam_rstr {
-        $Hm->Macro->setVar('#__geteventparam_rstr_arg0__', $args[0]);
-        $eval_ret = $Hm->Macro->doEval('$__temp_geteventparam_rstr__ = geteventparam(#__geteventparam_rstr_arg0__);');
-        $func_ret = $Hm->Macro->getVar('$__temp_geteventparam_rstr__');
-        $Hm->Macro->setVar('$__temp_geteventparam_rstr__', '');
-        $Hm->Macro->setVar('#__geteventparam_rstr_arg0__', 0);
-        return $func_ret;
-   
-}
-
 if (!function_exists("member_rnum")) {
     function member_rnum {
         $arg_name_list = [];
