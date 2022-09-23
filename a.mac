@@ -1,4 +1,6 @@
-﻿#PS = loaddll( hidemarudir + @"\hmPS.dll" );
+﻿#com = createobject("C:\\bbb\\ClassLibrary2.dll", "ClassLibrary2.Class1");
+
+#PS = loaddll( hidemarudir + @"\hmPS.dll" );
 if ( !#PS ) { message "hmPS.dllが読み込めない"; }
  
 #r = dllfuncw( #PS, "DoString", 
@@ -763,8 +765,13 @@ function member_str {
 }
 
 
-$a = message("a","b");
 $hm::OutputPane::Output($a);
+
+
+$com = createobject("C:\bbb\ClassLibrary2.dll", "ClassLibrary2.Class1");
+$b = member_str($com, "abc2");
+$hm::OutputPane::Output($b);
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 );
