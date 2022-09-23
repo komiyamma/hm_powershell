@@ -754,6 +754,14 @@ function geteventparam($event_info_ix) {
     }
 }
 
+function member_num {
+    return $hm::Macro::FuncProxy("member", "fnn", $args[0]);
+}
+
+function member_str {
+    return $hm::Macro::FuncProxy("member", "fss", $args[0]);
+}
+
 
 $a = message("a","b");
 $hm::OutputPane::Output($a);
