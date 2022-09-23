@@ -724,7 +724,7 @@ function replacedown{ return $hm::Macro::FuncProxy("replacedown", "st1s2s", $arg
 function replaceup{ return $hm::Macro::FuncProxy("replaceup", "st1s2s", $args[0]); }
 
 
-$a = message("あいうえお", "かきくけこ");
+$a = replacedialog("あいうえお", "かきくけこ");
 $hm::OutputPane::Output($a);
 
 

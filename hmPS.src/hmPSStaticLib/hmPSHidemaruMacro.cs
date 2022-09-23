@@ -1100,7 +1100,7 @@ public sealed partial class hmPSDynamicLib
                         return ret.Result;
                     }
                 }
-                else if (t == "fn2s")
+                else if (t == "fn1s2s")
                 {
                     List<object> list_args = new List<object>(args);
                     if (args.Length >= 1)
@@ -1122,7 +1122,7 @@ public sealed partial class hmPSDynamicLib
                     var ret = Statement(name, args);
                     return ret.Result;
                 }
-                else if (t == "fn1s")
+                else if (t == "st1s")
                 {
                     List<object> list_args = new List<object>(args);
                     if (args.Length >= 1)
@@ -1135,7 +1135,7 @@ public sealed partial class hmPSDynamicLib
                         return ret.Result;
                     }
                 }
-                else if (t == "fn2s")
+                else if (t == "st1s2s")
                 {
                     List<object> list_args = new List<object>(args);
                     if (args.Length >= 1)
