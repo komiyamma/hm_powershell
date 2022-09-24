@@ -209,7 +209,7 @@ function dllfuncexist{ return $hm::Macro::FuncProxy("dllfuncexist", "fn", $args[
 function createobject{ return $hm::Macro::FuncProxy("createobject", "fn", $args[0]); }
 
 function findmarker{ return $hm::Macro::FuncProxy("findmarker", "fs", $args[0]); }
-function diff{ return $hm::Macro::FuncProxy("diff", "fs", $args[0]); }
+function diff1{ return $hm::Macro::FuncProxy("diff", "fs", $args[0]); }
 function reservedmultisel{ return $hm::Macro::FuncProxy("reservedmultisel", "fs", $args[0]); }
 function regulardll{ return $hm::Macro::FuncProxy("regulardll", "fs", $args[0]); }
 function filename{ return $hm::Macro::FuncProxy("filename", "fs", $args[0]); }
@@ -317,7 +317,7 @@ function toupper{ return $hm::Macro::FuncProxy("toupper", "fsn", $args[0]); }
 function tolower{ return $hm::Macro::FuncProxy("tolower", "fsn", $args[0]); }
 
 # 分岐あり
-function filter{ return $hm::Macro::FuncProxy("filter", "fsn", $args[0]); }
+function filter1{ return $hm::Macro::FuncProxy("filter", "fsn", $args[0]); }
 
 function input{ return $hm::Macro::FuncProxy("input", "fs", $args[0]); }
 function getinistr{ return $hm::Macro::FuncProxy("getinistr", "fs", $args[0]); }
@@ -346,7 +346,7 @@ function readonlyopenfile{ return $hm::Macro::FuncProxy("readonlyopenfile", "st"
 function readonlyloadfile{ return $hm::Macro::FuncProxy("readonlyloadfile", "st", $args[0]); }
 function save{ return $hm::Macro::FuncProxy("save", "st", $args[0]); }
 function savelf{ return $hm::Macro::FuncProxy("savelf", "st", $args[0]); }
-function print2{ return $hm::Macro::FuncProxy("print", "st", $args[0]); }
+function print1{ return $hm::Macro::FuncProxy("print", "st", $args[0]); }
 function saveall{ return $hm::Macro::FuncProxy("saveall", "st", $args[0]); }
 function saveupdatedall{ return $hm::Macro::FuncProxy("saveupdatedall", "st", $args[0]); }
 function openbyshell{ return $hm::Macro::FuncProxy("openbyshell", "st", $args[0]); }
@@ -473,7 +473,6 @@ function clearreservedmultisel{ return $hm::Macro::FuncProxy("clearreservedmulti
 function clearreservedmultiselall{ return $hm::Macro::FuncProxy("clearreservedmultiselall", "st", $args[0]); }
 function backspace{ return $hm::Macro::FuncProxy("backspace", "st", $args[0]); }
 function delete{ return $hm::Macro::FuncProxy("del", "st", $args[0]); }
-function del{ return $hm::Macro::FuncProxy("del", "st", $args[0]); }
 function deleteafter{ return $hm::Macro::FuncProxy("deleteafter", "st", $args[0]); }
 function deletebefore{ return $hm::Macro::FuncProxy("deletebefore", "st", $args[0]); }
 function deleteline{ return $hm::Macro::FuncProxy("deleteline", "st", $args[0]); }
@@ -642,7 +641,7 @@ function enableinvert{ return $hm::Macro::FuncProxy("enableinvert", "st", $args[
 function disableerrormsg{ return $hm::Macro::FuncProxy("disableerrormsg", "st", $args[0]); }
 function enableerrormsg{ return $hm::Macro::FuncProxy("enableerrormsg", "st", $args[0]); }
 function disablehistory{ return $hm::Macro::FuncProxy("disablehistory", "st", $args[0]); }
-function sleep2{ return $hm::Macro::FuncProxy("sleep", "st", $args[0]); }
+function sleep1{ return $hm::Macro::FuncProxy("sleep", "st", $args[0]); }
 function setfloatmode{ return $hm::Macro::FuncProxy("setfloatmode", "st", $args[0]); }
 function seterrormode{ return $hm::Macro::FuncProxy("seterrormode", "st", $args[0]); }
 function setbackgroundmode{ return $hm::Macro::FuncProxy("setbackgroundmode", "st", $args[0]); }
