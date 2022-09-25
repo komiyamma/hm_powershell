@@ -715,22 +715,19 @@ function replacedialog{ return $hm::Macro::FuncProxy("replacedialog", "st1s2s", 
 function replacedown{ return $hm::Macro::FuncProxy("replacedown", "st1s2s", $args[0]); }
 function replaceup{ return $hm::Macro::FuncProxy("replaceup", "st1s2s", $args[0]); }
 
-function getconfig($name) {
-    $ret = $hm::Macro::FunctionStr("getconfig", $name); 
-    return $ret.Result;
+function getconfig {
+    return $hm::Macro::FuncProxy("getconfig", "fss", $args[0]);
 }
 
-function getconfig_rnum($name) {
-    $ret = $hm::Macro::FunctionNum("getconfig", $name); 
-    return $ret.Result;
+function getconfig_rnum {
+    return $hm::Macro::FuncProxy("getconfig_rnum", "fnn", $args[0]);
 }
 
 function getresultex($result_id) {
 
     if ($result_id -eq -1) {
-	    $ret = $hm::Macro::FunctionStr("getresultex", $result_id); 
+        $ret = $hm::Macro::FunctionStr("getresultex", $result_id); 
         return $ret.Result;
-   
     } else {
         $ret = $hm::Macro::FunctionNum("getresultex", $result_id);
         return $ret.Result;
