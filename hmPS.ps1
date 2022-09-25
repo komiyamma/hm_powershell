@@ -720,7 +720,7 @@ function getconfig {
 }
 
 function getconfig_rnum {
-    return $hm::Macro::FuncProxy("getconfig_rnum", "fnn", $args[0]);
+    return $hm::Macro::FuncProxy("getconfig", "fnn", $args[0]);
 }
 
 function getresultex($result_id) {
