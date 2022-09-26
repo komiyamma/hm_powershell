@@ -356,13 +356,13 @@ function setpathhist{ return $hm::Macro::FuncProxy("setpathhist", "st", $args[0]
 function setencode{ return $hm::Macro::FuncProxy("setencode", "st", $args[0]); }
 function stophistoryswitch{ return $hm::Macro::FuncProxy("stophistoryswitch", "st", $args[0]); }
 function deletefilehist{ return $hm::Macro::FuncProxy("deletefilehist", "st", $args[0]); }
-function OPEN_dialog{ return $hm::Macro::FuncProxy("OPEN", "st", $args[0]); }
-function SAVEAS_with_dialog{ return $hm::Macro::FuncProxy("SAVEAS", "st", $args[0]); }
-function LOAD_with_dialog{ return $hm::Macro::FuncProxy("LOAD", "st", $args[0]); }
-function APPENDSAVE_with_dialog{ return $hm::Macro::FuncProxy("APPENDSAVE", "st", $args[0]); }
-function CHANGENAME_with_dialog{ return $hm::Macro::FuncProxy("CHANGENAME", "st", $args[0]); }
-function INSERTFILE_with_dialog{ return $hm::Macro::FuncProxy("INSERTFILE", "st", $args[0]); }
-function OPENFILEPART_with_dialog{ return $hm::Macro::FuncProxy("OPENFILEPART", "st", $args[0]); }
+function OPENdialog{ return $hm::Macro::FuncProxy("OPEN", "st", $args[0]); }
+function SAVEASdialog{ return $hm::Macro::FuncProxy("SAVEAS", "st", $args[0]); }
+function LOADdialog{ return $hm::Macro::FuncProxy("LOAD", "st", $args[0]); }
+function APPENDSAVEdialog{ return $hm::Macro::FuncProxy("APPENDSAVE", "st", $args[0]); }
+function CHANGENAMEdialog{ return $hm::Macro::FuncProxy("CHANGENAME", "st", $args[0]); }
+function INSERTFILEdialog{ return $hm::Macro::FuncProxy("INSERTFILE", "st", $args[0]); }
+function OPENFILEPARTdialog{ return $hm::Macro::FuncProxy("OPENFILEPART", "st", $args[0]); }
 function deletefile{ return $hm::Macro::FuncProxy("deletefile", "st", $args[0]); }
 function propertydialog{ return $hm::Macro::FuncProxy("propertydialog", "st", $args[0]); }
 
@@ -565,7 +565,7 @@ function windowtiling{ return $hm::Macro::FuncProxy("windowtiling", "st", $args[
 function windowvert{ return $hm::Macro::FuncProxy("windowvert", "st", $args[0]); }
 function windowlist{ return $hm::Macro::FuncProxy("windowlist", "st", $args[0]); }
 function compfile{ return $hm::Macro::FuncProxy("compfile", "st", $args[0]); }
-function COMPFILE_with_dialog{ return $hm::Macro::FuncProxy("COMPFILE", "st", $args[0]); }
+function COMPFILEdialog{ return $hm::Macro::FuncProxy("COMPFILE", "st", $args[0]); }
 function nextcompfile{ return $hm::Macro::FuncProxy("nextcompfile", "st", $args[0]); }
 function prevcompfile{ return $hm::Macro::FuncProxy("prevcompfile", "st", $args[0]); }
 function alwaystopswitch{ return $hm::Macro::FuncProxy("alwaystopswitch", "st", $args[0]); }
