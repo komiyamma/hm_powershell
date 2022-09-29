@@ -330,7 +330,7 @@ function getstaticvariable{ return $hm::Macro::FuncProxy("getstaticvariable", "f
 function getclipboard{ return $hm::Macro::FuncProxy("getclipboard", "fs", $args[0]); }
 function dllfuncstr{ return $hm::Macro::FuncProxy("dllfuncstr", "fs", $args[0]); }
 function dllfuncstrw{ return $hm::Macro::FuncProxy("dllfuncstrw", "fs", $args[0]); }
-function loaddllfile{ return $hm::Macro::FuncProxy("loaddllfile", "fs", $args[0]); }
+function getloaddllfile{ return $hm::Macro::FuncProxy("getloaddllfile", "fs", $args[0]); }
 
 function refreshdatetime{ return $hm::Macro::FuncProxy("refreshdatetime", "st", $args[0]); }
 function newfile{ return $hm::Macro::FuncProxy("newfile", "st", $args[0]); }
