@@ -311,6 +311,9 @@ function getlinecount($arguments) {
 }
 
 # 分岐あり
+function hidemaruversion{ return $hm::Macro::FuncProxy("hidemaruversion", "fsn", $args[0]); }
+
+# 分岐あり
 function toupper{ return $hm::Macro::FuncProxy("toupper", "fsn", $args[0]); }
 
 # 分岐あり

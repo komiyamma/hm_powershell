@@ -1163,6 +1163,14 @@ public sealed partial class hmPSDynamicLib
                             return ret.Result;
                         }
                     }
+                    else if (name == "hidemaruversion")
+                    {
+                        if (args.Length >= 1 && args[0].GetType() == "".GetType())
+                        {
+                            var ret = Statement(name, args);
+                            return ret.Result;
+                        }
+                    }
 
                     var count = args.Length;
                     if (count == 0)
