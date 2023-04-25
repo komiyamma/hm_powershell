@@ -207,6 +207,10 @@ function dllfunc{ return $hm::Macro::FuncProxy("dllfunc", "fn", $args[0]); }
 function dllfuncw{ return $hm::Macro::FuncProxy("dllfuncw", "fn", $args[0]); }
 function dllfuncexist{ return $hm::Macro::FuncProxy("dllfuncexist", "fn", $args[0]); }
 function createobject{ return $hm::Macro::FuncProxy("createobject", "fn", $args[0]); }
+function browserpanehandle{ return $hm::Macro::FuncProxy("browserpanehandle", "fn", $args[0]); }
+function browserpanesize{ return $hm::Macro::FuncProxy("browserpanesize", "fn", $args[0]); }
+function keyhook{ return $hm::Macro::FuncProxy("keyhook", "fn", $args[0]); }
+function registercallback{ return $hm::Macro::FuncProxy("registercallback", "fn", $args[0]); }
 
 function findmarker{ return $hm::Macro::FuncProxy("findmarker", "fs", $args[0]); }
 function diff1{ return $hm::Macro::FuncProxy("diff", "fs", $args[0]); }
@@ -334,6 +338,10 @@ function getclipboard{ return $hm::Macro::FuncProxy("getclipboard", "fs", $args[
 function dllfuncstr{ return $hm::Macro::FuncProxy("dllfuncstr", "fs", $args[0]); }
 function dllfuncstrw{ return $hm::Macro::FuncProxy("dllfuncstrw", "fs", $args[0]); }
 function getloaddllfile{ return $hm::Macro::FuncProxy("getloaddllfile", "fs", $args[0]); }
+function browserpaneurl{ return $hm::Macro::FuncProxy("browserpaneurl", "fs", $args[0]); }
+function browserpanecommand{ return $hm::Macro::FuncProxy("browserpanecommand", "fs", $args[0]); }
+function renderpanecommand{ return $hm::Macro::FuncProxy("renderpanecommand", "fs", $args[0]); }
+function getselectedrange{ return $hm::Macro::FuncProxy("getselectedrange", "fs", $args[0]); }
 
 function refreshdatetime{ return $hm::Macro::FuncProxy("refreshdatetime", "st", $args[0]); }
 function newfile{ return $hm::Macro::FuncProxy("newfile", "st", $args[0]); }
@@ -700,6 +708,13 @@ function keepdll{ return $hm::Macro::FuncProxy("keepdll", "st", $args[0]); }
 function setcomdetachmethod{ return $hm::Macro::FuncProxy("setcomdetachmethod", "st", $args[0]); }
 function keepobject{ return $hm::Macro::FuncProxy("keepobject", "st", $args[0]); }
 function releaseobject{ return $hm::Macro::FuncProxy("releaseobject", "st", $args[0]); }
+function showbrowserpane{ return $hm::Macro::FuncProxy("showbrowserpane", "st", $args[0]); }
+function refreshbrowserpane{ return $hm::Macro::FuncProxy("refreshbrowserpane", "st", $args[0]); }
+function setbrowserpanesize{ return $hm::Macro::FuncProxy("setbrowserpanesize", "st", $args[0]); }
+function setbrowserpaneurl{ return $hm::Macro::FuncProxy("setbrowserpaneurl", "st", $args[0]); }
+function setbrowserpanetarget{ return $hm::Macro::FuncProxy("setbrowserpanetarget", "st", $args[0]); }
+function setselectionrange{ return $hm::Macro::FuncProxy("setselectionrange", "st", $args[0]); }
+function clearkeyhook{ return $hm::Macro::FuncProxy("clearkeyhook", "st", $args[0]); }
 
 function message{ return $hm::Macro::FuncProxy("message", "fn1s2s", $args[0]); }
 
@@ -740,6 +755,10 @@ function getresultex($result_id) {
 function geteventparam($event_info_ix) {
 
     if (($event_info_ix -eq 0) -and (event -eq 9)) {
+        $ret = $hm::Macro::FunctionStr("geteventparam", $event_info_ix);
+        return $ret.Result;
+    }
+    elseif (($event_info_ix -eq 0) -and (event -eq 10)) {
         $ret = $hm::Macro::FunctionStr("geteventparam", $event_info_ix);
         return $ret.Result;
     }
