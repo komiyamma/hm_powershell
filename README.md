@@ -1,6 +1,6 @@
 # hmPS について
 
-![hmPS v2.0.0](https://img.shields.io/badge/hmPS-v2.0.0-6479ff.svg)
+![hmPS v2.0.1](https://img.shields.io/badge/hmPS-v2.0.1-6479ff.svg)
 [![Apache 2.0](https://img.shields.io/badge/license-Apache_2.0-blue.svg?style=flat)](LICENSE)
 ![Hidemaru 8.73](https://img.shields.io/badge/Hidemaru-v8.73-6479ff.svg)
 ![PowerShell 5.x](https://img.shields.io/badge/PowerShell-v5.x-6479ff.svg?logo=powershell&logoColor=white)
