@@ -768,11 +768,11 @@ function geteventparam($event_info_ix) {
     }
 }
 
-function member_num {
+function member_rnum {
     return $hm::Macro::FuncProxy("member", "fnn", $args[0]);
 }
 
-function member_str {
+function member_rstr {
     return $hm::Macro::FuncProxy("member", "fss", $args[0]);
 }
 
