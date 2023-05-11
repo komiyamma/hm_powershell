@@ -1,4 +1,4 @@
-# hmPS.ps1 v2.0.1.1
+# hmPS.ps1 v2.0.2.1
 
 function gettotaltext{ return $hm::Macro::FuncProxy("gettotaltext", "fs0", $args[0]); }
 function getlinetext{ return $hm::Macro::FuncProxy("getlinetext", "fs0", $args[0]); }
@@ -24,6 +24,8 @@ function marked{ return $hm::Macro::FuncProxy("marked", "fn", $args[0]); }
 function lineupdated{ return $hm::Macro::FuncProxy("lineupdated", "fn", $args[0]); }
 function xpixel{ return $hm::Macro::FuncProxy("xpixel", "fn", $args[0]); }
 function ypixel{ return $hm::Macro::FuncProxy("ypixel", "fn", $args[0]); }
+function xpixel2{ return $hm::Macro::FuncProxy("xpixel2", "fn", $args[0]); }
+function ypixel2{ return $hm::Macro::FuncProxy("ypixel2", "fn", $args[0]); }
 function prevposx{ return $hm::Macro::FuncProxy("prevposx", "fn", $args[0]); }
 function prevposy{ return $hm::Macro::FuncProxy("prevposy", "fn", $args[0]); }
 function lastupdatedx{ return $hm::Macro::FuncProxy("lastupdatedx", "fn", $args[0]); }
