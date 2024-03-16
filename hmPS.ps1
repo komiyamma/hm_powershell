@@ -1,4 +1,4 @@
-# hmPS.ps1 v2.0.2.1
+# hmPS.ps1 v2.0.2.2
 
 function gettotaltext{ return $hm::Macro::FuncProxy("gettotaltext", "fs0", $args[0]); }
 function getlinetext{ return $hm::Macro::FuncProxy("getlinetext", "fs0", $args[0]); }

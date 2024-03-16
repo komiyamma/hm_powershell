@@ -169,21 +169,21 @@ Struct hmPSDynamicLib+Hidemaru+TEdit+HmMousePos: AutoLayout, AnsiClass, Class, N
     get_y(): PrivateScope, Public, HideBySig, SpecialName
     get_column(): PrivateScope, Public, HideBySig, SpecialName
     get_lineno(): PrivateScope, Public, HideBySig, SpecialName
-Interface hmPSDynamicLib+Hidemaru+TFile+IHidemaruEncoding: AutoLayout, AnsiClass, Class, NestedPublic, ClassSemanticsMask, Abstract
+Interface hmPSDynamicLib+Hidemaru+TFile+IHidemaruEncoding: AutoLayout, AnsiClass, Class, NestedPublic, ClassSemanticsMask, Abstract, BeforeFieldInit
   Properties:
     Int32 HmEncode 'get ' : 
   Methods:
     get_HmEncode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
-Interface hmPSDynamicLib+Hidemaru+TFile+IMicrosoftEncoding: AutoLayout, AnsiClass, Class, NestedPublic, ClassSemanticsMask, Abstract
+Interface hmPSDynamicLib+Hidemaru+TFile+IMicrosoftEncoding: AutoLayout, AnsiClass, Class, NestedPublic, ClassSemanticsMask, Abstract, BeforeFieldInit
   Properties:
     Int32 MsCodePage 'get ' : 
   Methods:
     get_MsCodePage(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
-Interface hmPSDynamicLib+Hidemaru+TFile+IEncoding: AutoLayout, AnsiClass, Class, NestedPublic, ClassSemanticsMask, Abstract
+Interface hmPSDynamicLib+Hidemaru+TFile+IEncoding: AutoLayout, AnsiClass, Class, NestedPublic, ClassSemanticsMask, Abstract, BeforeFieldInit
   Interfaces:
     hmPSDynamicLib+Hidemaru+TFile+IHidemaruEncoding
     hmPSDynamicLib+Hidemaru+TFile+IMicrosoftEncoding
-Interface hmPSDynamicLib+Hidemaru+TFile+IHidemaruStreamReader: AutoLayout, AnsiClass, Class, NestedPublic, ClassSemanticsMask, Abstract
+Interface hmPSDynamicLib+Hidemaru+TFile+IHidemaruStreamReader: AutoLayout, AnsiClass, Class, NestedPublic, ClassSemanticsMask, Abstract, BeforeFieldInit
   Interfaces:
     System.IDisposable
   Properties:
@@ -219,7 +219,7 @@ Class hmPSDynamicLib+Hidemaru+TFile+HidemaruStreamReader: AutoLayout, AnsiClass,
     get_FilePath(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
     Close(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
-Interface hmPSDynamicLib+Hidemaru+TMacro+IResult: AutoLayout, AnsiClass, Class, NestedPublic, ClassSemanticsMask, Abstract
+Interface hmPSDynamicLib+Hidemaru+TMacro+IResult: AutoLayout, AnsiClass, Class, NestedPublic, ClassSemanticsMask, Abstract, BeforeFieldInit
   Properties:
     Int32 Result 'get ' : 
     System.String Message 'get ' : 
@@ -228,7 +228,7 @@ Interface hmPSDynamicLib+Hidemaru+TMacro+IResult: AutoLayout, AnsiClass, Class, 
     get_Result(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
     get_Message(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
     get_Error(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
-Interface hmPSDynamicLib+Hidemaru+TMacro+IStatementResult: AutoLayout, AnsiClass, Class, NestedPublic, ClassSemanticsMask, Abstract
+Interface hmPSDynamicLib+Hidemaru+TMacro+IStatementResult: AutoLayout, AnsiClass, Class, NestedPublic, ClassSemanticsMask, Abstract, BeforeFieldInit
   Properties:
     Int32 Result 'get ' : 
     System.String Message 'get ' : 
@@ -239,7 +239,7 @@ Interface hmPSDynamicLib+Hidemaru+TMacro+IStatementResult: AutoLayout, AnsiClass
     get_Message(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
     get_Error(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
     get_Args(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
-Interface hmPSDynamicLib+Hidemaru+TMacro+IFunctionResult: AutoLayout, AnsiClass, Class, NestedPublic, ClassSemanticsMask, Abstract
+Interface hmPSDynamicLib+Hidemaru+TMacro+IFunctionResult: AutoLayout, AnsiClass, Class, NestedPublic, ClassSemanticsMask, Abstract, BeforeFieldInit
   Properties:
     System.Object Result 'get ' : 
     System.String Message 'get ' : 
