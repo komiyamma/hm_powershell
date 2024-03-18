@@ -296,6 +296,8 @@ function gettitle{ return $hm::Macro::FuncProxy("gettitle", "fs", $args[0]); }
 function browsefile{ return $hm::Macro::FuncProxy("browsefile", "fs", $args[0]); }
 function quote{ return $hm::Macro::FuncProxy("quote", "fs", $args[0]); }
 function strreplace{ return $hm::Macro::FuncProxy("strreplace", "fs", $args[0]); }
+function getimecandidate{ return $hm::Macro::FuncProxy("getimecandidate", "fs", $args[0]); }
+
 # jsmodeには無いがpowershellには必要
 function encodeuri{ return $hm::Macro::FuncProxy("encodeuri", "fs", $args[0]); }
 function decodeuri{ return $hm::Macro::FuncProxy("decodeuri", "fs", $args[0]); }
@@ -389,6 +391,8 @@ function shiftup{ return $hm::Macro::FuncProxy("shiftup", "st", $args[0]); }
 function shiftdown{ return $hm::Macro::FuncProxy("shiftdown", "st", $args[0]); }
 function shiftright{ return $hm::Macro::FuncProxy("shiftright", "st", $args[0]); }
 function shiftleft{ return $hm::Macro::FuncProxy("shiftleft", "st", $args[0]); }
+function shifthome{ return $hm::Macro::FuncProxy("shifthome", "st", $args[0]); }
+function shiftend{ return $hm::Macro::FuncProxy("shiftend", "st", $args[0]); }
 function gofileend{ return $hm::Macro::FuncProxy("gofileend", "st", $args[0]); }
 function gofiletop{ return $hm::Macro::FuncProxy("gofiletop", "st", $args[0]); }
 function gokakko{ return $hm::Macro::FuncProxy("gokakko", "st", $args[0]); }
