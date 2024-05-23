@@ -1,6 +1,7 @@
 # hmPS.ps1 v2.0.2.3
 
-function gettotaltext{ return $hm::Macro::FuncProxy("gettotaltext", "fs0", $args[0]); }
+function gettotaltext{ return $hm::Edit::TotalText; }
+function settotaltext{ $hm::Edit::TotalText=$args[0]; return $hm::Macro::Var["result"]; }
 function getlinetext{ return $hm::Macro::FuncProxy("getlinetext", "fs0", $args[0]); }
 function getselectedtext{ return $hm::Macro::FuncProxy("getselectedtext", "fs0", $args[0]); }
 
