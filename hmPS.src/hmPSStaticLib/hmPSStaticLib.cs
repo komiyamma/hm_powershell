@@ -102,7 +102,7 @@ public sealed partial class hmPSDynamicLib
             strExecuteFullpath = exe_full_path.ToString();
         } catch(Exception e)
         {
-            System.Diagnostics.Trace.WriteLine(e.Message);
+            OutputDebugStream(e.Message);
         }
     }
 
@@ -352,11 +352,11 @@ public sealed partial class hmPSDynamicLib
                     }
                     err.AppendLine(pipeline.Error.Read().ToString());
                 }
-                System.Diagnostics.Trace.WriteLine("Error executing PowerShell Command : " + err);
+                OutputDebugStream("Error executing PowerShell Command : " + err);
             }
         }
         catch (Exception err) {
-            System.Diagnostics.Trace.WriteLine(err.Message);
+            OutputDebugStream(err.Message);
         }
 
         return (IntPtr)0;
