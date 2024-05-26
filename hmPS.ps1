@@ -661,7 +661,7 @@ function enableerrormsg{ return $hm::Macro::FuncProxy("enableerrormsg", "st", $a
 function disablehistory{ return $hm::Macro::FuncProxy("disablehistory", "st", $args[0]); }
 function sleep1{ return $hm::Macro::FuncProxy("sleep", "st", $args[0]); }
 function setfloatmode{ return $hm::Macro::FuncProxy("setfloatmode", "st", $args[0]); }
-function seterrormode{ return $hm::Macro::FuncProxy("seterrormode", "st", $args[0]); }
+function seterrormode{ return $hm::Macro::FuncProxy("seterrormode", "fn", $args[0]); }
 function setbackgroundmode{ return $hm::Macro::FuncProxy("setbackgroundmode", "st", $args[0]); }
 function inputpos{ return $hm::Macro::FuncProxy("inputpos", "st", $args[0]); }
 function menu{ return $hm::Macro::FuncProxy("menu", "st", $args[0]); }
