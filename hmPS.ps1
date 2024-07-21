@@ -1,4 +1,4 @@
-# hmPS.ps1 v2.0.2.3
+# hmPS.ps1 v2.0.2.4
 
 function gettotaltext{ return $hm::Edit::TotalText; }
 function settotaltext{ $hm::Edit::TotalText=$args[0]; return $hm::Macro::Var["result"]; }
