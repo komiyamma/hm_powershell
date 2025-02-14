@@ -298,6 +298,7 @@ function browsefile{ return $hm::Macro::FuncProxy("browsefile", "fs", $args[0]);
 function quote{ return $hm::Macro::FuncProxy("quote", "fs", $args[0]); }
 function strreplace{ return $hm::Macro::FuncProxy("strreplace", "fs", $args[0]); }
 function getimecandidate{ return $hm::Macro::FuncProxy("getimecandidate", "fs", $args[0]); }
+function getdpi{ return $hm::Macro::FuncProxy("getdpi", "fnfo", $args[0]); }
 
 # jsmodeには無いがpowershellには必要
 function encodeuri{ return $hm::Macro::FuncProxy("encodeuri", "fs", $args[0]); }

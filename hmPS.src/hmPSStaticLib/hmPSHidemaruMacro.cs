@@ -1143,6 +1143,20 @@ public sealed partial class hmPSDynamicLib
                         return ret.Result;
                     }
                 }
+                else if (t == "fnfo)
+                {
+                    var count = args.Length;
+                    if (count == 0)
+                    {
+                        var ret = Function(name);
+                        return ret.Result;
+                    }
+                    else
+                    {
+                        var ret = Function(name, args);
+                        return ret.Result;
+                    }
+                }
                 else if (t == "fnn")
                 {
                     var ret = FunctionNum(name, args);
