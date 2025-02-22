@@ -1143,7 +1143,7 @@ public sealed partial class hmPSDynamicLib
                         return ret.Result;
                     }
                 }
-                else if (t == "fnfo)
+                else if (t == "fnfo")
                 {
                     var count = args.Length;
                     if (count == 0)
